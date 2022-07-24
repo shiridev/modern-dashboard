@@ -1,0 +1,23 @@
+.mainContainer {
+  height: 100vh;
+  width: 300px;
+  overflow-y: auto;
+  box-shadow: 5px 0 20px 0 rgba($color: #000000, $alpha: 0.05);
+
+  .topContainer {
+    display: flex;
+    align-items: center;
+
+    .profileImage {
+      height: 50px;
+      width: 50px;
+      border-radius: 9999999px;
+      border-width: 3px;
+      border-style: solid;
+    }
+
+    h4 {
+      font-weight: bolder;
+    }
+  }
+}
