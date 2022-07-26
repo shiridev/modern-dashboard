@@ -1,8 +1,15 @@
 .mainContainer {
   height: 100vh;
-  width: 300px;
+  min-width: 300px;
+  max-width: fit-content;
+  overflow-x: hidden;
   overflow-y: auto;
   box-shadow: 5px 0 20px 0 rgba($color: #000000, $alpha: 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10000;
 
   .topContainer {
     display: flex;
@@ -19,5 +26,18 @@
     h4 {
       font-weight: bolder;
     }
+  }
+
+  .logoutBtn {
+    border: none;
+    text-align: start;
+  }
+}
+
+@media only screen and (max-device-width: 1024px) {
+  .mainContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 }

@@ -27,11 +27,12 @@ export const SidebarMenu = (props) => {
   };
 
   return (
-    <div
-      className="d-flex align-items-center justify-content-between py-3"
+    <button
+      className="d-flex align-items-center justify-content-between py-3 w-100 px-0"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      style={{ height: 40, cursor: "pointer" }}
+      style={{ height: 40, cursor: "pointer", border: "none", backgroundColor: colors.white }}
+      onClick={props.onClick}
     >
       <div className="d-flex align-items-center">
         <div
@@ -68,6 +69,6 @@ export const SidebarMenu = (props) => {
           {props.badge}
         </Badge>
       )}
-    </div>
+    </button>
   );
 };
