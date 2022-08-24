@@ -4,8 +4,8 @@ import styled from "styled-components";
 
 const Badge = styled.span`
   color: white;
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +15,8 @@ const Badge = styled.span`
 `;
 
 export const SidebarMenu = (props) => {
-  const colors = useSelector((state) => state.theme.defaultTheme);
+  const colors = useSelector((state) => state.theme.defaultTheme.colors);
+  const mainColor = useSelector((state) => state.theme.mainColor);
   const [hover, setHover] = useState(false);
 
   const onMouseEnter = () => {
@@ -31,15 +32,21 @@ export const SidebarMenu = (props) => {
       className="d-flex align-items-center justify-content-between py-3 w-100 px-0"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      style={{ height: 40, cursor: "pointer", border: "none", backgroundColor: colors.white }}
+      style={{
+        height: 45,
+        cursor: "pointer",
+        border: "none",
+        backgroundColor: colors.white,
+        transition: "0.3s",
+      }}
       onClick={props.onClick}
     >
       <div className="d-flex align-items-center">
         <div
           style={{
-            height: 40,
+            height: 45,
             width: 5,
-            backgroundColor: props.active ? colors.blue : "transparent",
+            backgroundColor: props.active ? mainColor : "transparent",
             borderTopRightRadius: 10,
             borderBottomRightRadius: 10,
           }}
@@ -47,9 +54,11 @@ export const SidebarMenu = (props) => {
         {
           <props.icon
             style={{ transition: "0.3s" }}
-            size="1.1em"
+            size="1.2em"
             variant="Bold"
-            color={props.active ? colors.blue : hover ? colors.blue : colors.grey}
+            color={
+              props.active ? mainColor : hover ? mainColor : colors.grey
+            }
             className="ms-3"
           />
         }
@@ -57,7 +66,11 @@ export const SidebarMenu = (props) => {
           className="ms-3"
           style={{
             fontWeight: props.active ? "bold" : hover ? "bold" : "normal",
-            color: props.active ? colors.blue : hover ? colors.blue : colors.grey,
+            color: props.active
+              ? mainColor
+              : hover
+              ? mainColor
+              : colors.grey,
             userSelect: "none",
           }}
         >

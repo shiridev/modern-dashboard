@@ -25,7 +25,10 @@ export const sidebarSlice = createSlice({
         }
       }
     },
-    toggleCollapse: (state) => {
+    toggleCollapse: (state, params) => {
+      if (params.payload) {
+        state.collapse = params.payload.collapse;
+      }
       if (state.collapse === false) {
         state.collapse = true;
       } else {
