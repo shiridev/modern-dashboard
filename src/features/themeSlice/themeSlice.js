@@ -21,9 +21,5 @@ export const themeSlice = createSlice({
     changeMainColor: (state, params) => {
       state.mainColor = params.payload.color;
     },
-
-    toggleShowColorSelector: (state) => {
-      state.showColorSelector = !state.showColorSelector;
-    },
   },
 });

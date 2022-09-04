@@ -12,6 +12,7 @@ const Badge = styled.span`
   border-radius: 9999px;
   font-size: 0.9em;
   background-color: ${(props) => props.colors.red};
+  transition: 0.3s;
 `;
 
 export const SidebarMenu = (props) => {
@@ -56,9 +57,7 @@ export const SidebarMenu = (props) => {
             style={{ transition: "0.3s" }}
             size="1.2em"
             variant="Bold"
-            color={
-              props.active ? mainColor : hover ? mainColor : colors.grey
-            }
+            color={props.active ? mainColor : hover ? mainColor : colors.grey}
             className="ms-3"
           />
         }
@@ -66,11 +65,7 @@ export const SidebarMenu = (props) => {
           className="ms-3"
           style={{
             fontWeight: props.active ? "bold" : hover ? "bold" : "normal",
-            color: props.active
-              ? mainColor
-              : hover
-              ? mainColor
-              : colors.grey,
+            color: props.active ? mainColor : hover ? mainColor : colors.grey,
             userSelect: "none",
           }}
         >

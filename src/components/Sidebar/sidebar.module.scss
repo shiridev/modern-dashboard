@@ -4,67 +4,73 @@
   display: flex;
   justify-content: space-between;
   z-index: 2;
-  transition: 0.3s ease-in-out;
+  transition: 0.3s;
+  flex-direction: column;
+  overflow-y: auto;
 
-  .menusContainer {
+  .topContainer {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 300px;
-    box-shadow: 5px 0 20px 0 rgba($color: #000000, $alpha: 0.05);
-    overflow-y: "auto";
+    align-items: center;
+    height: 80px;
+    border-bottom: 1px solid;
     transition: 0.3s;
 
-    .topContainer {
-      display: flex;
-      align-items: center;
-      height: 80px;
-      border-bottom: 1px solid;
-      transition: 0.3s;
-
-      .profileImage {
-        height: 50px;
-        width: 50px;
-        border-radius: 9999999px;
-        border-width: 3px;
-        border-style: solid;
-      }
-
-      h4 {
-        font-weight: bolder;
-      }
+    .profileImage {
+      height: 50px;
+      width: 50px;
+      border-radius: 9999999px;
+      border-width: 3px;
+      border-style: solid;
     }
 
-    .logoutBtn {
+    h4 {
+      font-weight: bolder;
+    }
+
+    .closeButton {
       border: none;
-      text-align: start;
-      min-height: 80px;
+      border-radius: 99999px;
+      min-height: 40px;
+      min-width: 40px;
+      max-width: 40px;
+      box-shadow: -5px 0 20px 0 rgba($color: #000000, $alpha: 0.1);
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       transition: 0.3s;
-      border-top: 1px solid;
     }
   }
-}
 
-.sidebarToggleCollapse {
-  position: relative;
-  border: none;
-  height: 40px;
-  min-width: 40px;
-  border-radius: 999999px;
-  box-shadow: 0 5px 20px 0 rgba($color: #000000, $alpha: 0.1);
-  padding: 0;
-  margin: 0;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  z-index: 100000;
-  transition: 0.3s;
+  .logoutBtn {
+    border: none;
+    text-align: start;
+    min-height: 80px;
+    transition: 0.3s;
+    border-top: 1px solid;
+  }
+
+  .sidebarToggleCollapse {
+    position: relative;
+    border: none;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 999999px;
+    box-shadow: 0 5px 20px 0 rgba($color: #000000, $alpha: 0.1);
+    padding: 0;
+    margin: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    z-index: 100000;
+    transition: 0.3s;
+  }
 }
 
 @media only screen and (max-device-width: 1024px) {
   .mainContainer {
-    min-width: 340px;
     position: fixed;
     top: 0;
     left: -300px;

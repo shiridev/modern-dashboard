@@ -12,15 +12,34 @@ $boxShadow: 0 5px 20px 0
   overflow-y: auto;
   transition: 0.3s;
 
-  .searchInput{
+  .searchInput {
     border-radius: 99999px;
   }
 
   .topContainer {
     height: 80px;
     display: flex;
-    flex-direction: row-reverse;
     align-items: center;
+
+    .colorChangerContainer {
+      border: none;
+      border-radius: 999999px;
+      height: 40px;
+      box-shadow: $boxShadow;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+
+      button {
+        border: none;
+        outline: none;
+        background-color: transparent !important;
+        padding: 0;
+        box-shadow: none;
+      }
+    }
 
     .topContentButton {
       border: none;
