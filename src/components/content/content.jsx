@@ -20,6 +20,7 @@ import { CustomButton } from "../customButton/customButton";
 import { CustomInput } from "../customInput/customInput";
 import { CustomModal } from "../customModal/customModal";
 import { DataCard } from "../dataCard/dataCard";
+import { HomeBigChart } from "../homeBigChart/homeBigChart";
 import styles from "./content.module.scss";
 
 export const Content = () => {
@@ -33,8 +34,8 @@ export const Content = () => {
   const data1 = [
     {
       name: "Page A",
-      uv: 0,
-      pv: 0,
+      uv: 1320,
+      pv: 1500,
       amt: 2400,
     },
     {
@@ -116,7 +117,7 @@ export const Content = () => {
 
   return (
     <div
-      className={styles.mainContainer}
+      className={`${styles.mainContainer} px-4 pb-4`}
       style={{ backgroundColor: colors.lightGrey }}
     >
       <CustomModal show={showModal} header="Search">
@@ -135,7 +136,7 @@ export const Content = () => {
         </CustomButton>
       </CustomModal>
       <div
-        className={`px-3 ${styles.topContainer} ${
+        className={`${styles.topContainer} ${
           isTabletOrMobile ? "justify-content-between" : "justify-content-end"
         }`}
       >
@@ -176,11 +177,11 @@ export const Content = () => {
               style={{ backgroundColor: colors.white }}
               onClick={() =>
                 dispatch(
-                  themeSlice.actions.changeMainColor({ color: colors.purple })
+                  themeSlice.actions.changeMainColor({ color: colors.green })
                 )
               }
             >
-              <RecordCircle color={colors.purple} size="1.3em" variant="Bold" />
+              <RecordCircle color={colors.green} size="1.3em" variant="Bold" />
             </button>
             <button
               className={`${styles.topContentButton}`}
@@ -207,7 +208,7 @@ export const Content = () => {
           </button>
         </div>
       </div>
-      <Row className="g-4 px-4">
+      <Row className="g-4">
         <Col sm={12} md={6} lg={3}>
           <DataCard
             icon={<Card color="white" size="1.5em" variant="Bold" />}
@@ -239,6 +240,9 @@ export const Content = () => {
             text="Lorem ipsum"
             chartData={data2}
           />
+        </Col>
+        <Col sm={12} lg={6}>
+          <HomeBigChart title="Market Overview" chartData={data1} />
         </Col>
       </Row>
     </div>

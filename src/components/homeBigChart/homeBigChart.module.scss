@@ -1,0 +1,22 @@
+$boxShadow: 0 5px 20px 0
+  rgba(
+    $color: #000000,
+    $alpha: 0.05,
+  );
+
+.mainContainer {
+  border-radius: 15px;
+  box-shadow: $boxShadow;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  transition: 0.3s;
+
+  .titleContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+  }
+}

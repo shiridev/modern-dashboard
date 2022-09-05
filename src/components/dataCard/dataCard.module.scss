@@ -21,6 +21,7 @@ $boxShadow: 0 5px 20px 0
     align-items: center;
     justify-content: center;
     border-radius: 8px;
+    box-shadow: $boxShadow;
   }
 
   .moreButton {
@@ -30,12 +31,12 @@ $boxShadow: 0 5px 20px 0
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 26px;
+    width: 25px;
     padding: 0;
 
     div {
-      height: 6px;
-      width: 6px;
+      height: 5px;
+      width: 5px;
       border-radius: 50%;
     }
   }

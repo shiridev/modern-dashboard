@@ -5,7 +5,7 @@ import {
   LogoutCurve,
   Menu,
   Money,
-  ShoppingCart,
+  ShoppingCart
 } from "iconsax-react";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux/es/exports";

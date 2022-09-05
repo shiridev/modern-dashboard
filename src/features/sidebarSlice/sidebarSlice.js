@@ -4,7 +4,7 @@ export const sidebarSlice = createSlice({
   name: "sidebarSlice",
   initialState: {
     menus: [
-      { name: "Home", active: false },
+      { name: "Home", active: true },
       { name: "Apps", active: false },
       { name: "Cart", active: false },
       { name: "Payments", active: false },

@@ -7,6 +7,7 @@ export const colors = {
     red: "#EF233C",
     purple: "#b5179e",
     carbon: "#343434",
+    green: "#06d6a0",
   },
   dark: {
     white: "#001233",
@@ -16,5 +17,6 @@ export const colors = {
     red: "#EF233C",
     purple: "#b5179e",
     carbon: "#fff",
+    green: "#06d6a0",
   },
 };
