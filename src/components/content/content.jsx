@@ -21,12 +21,14 @@ import { CustomInput } from "../customInput/customInput";
 import { CustomModal } from "../customModal/customModal";
 import { DataCard } from "../dataCard/dataCard";
 import { HomeBigChart } from "../homeBigChart/homeBigChart";
+import { Time } from "../time/time";
 import styles from "./content.module.scss";
 
-export const Content = () => {
+export const Content = (props) => {
   const theme = useSelector((state) => state.theme.defaultTheme);
   const colors = theme.colors;
   const mainColor = useSelector((state) => state.theme.mainColor);
+  const apiData = useSelector((state) => state.apiData);
   const showModal = useSelector((state) => state.modal.show);
   const dispatch = useDispatch();
   const isTabletOrMobile = useMediaQuery({ maxWidth: 1024 });
@@ -220,7 +222,7 @@ export const Content = () => {
         <Col sm={12} md={6} lg={3}>
           <DataCard
             icon={<I3Dcube color="white" size="1.5em" variant="Bold" />}
-            number="2,500"
+            number={apiData.products.length}
             text="Lorem ipsum"
             chartData={data2}
           />
@@ -228,7 +230,7 @@ export const Content = () => {
         <Col sm={12} md={6} lg={3}>
           <DataCard
             icon={<Profile2User color="white" size="1.5em" variant="Bold" />}
-            number="12,000"
+            number={apiData.users.length}
             text="Lorem ipsum"
             chartData={data1}
           />
@@ -243,6 +245,9 @@ export const Content = () => {
         </Col>
         <Col sm={12} lg={6}>
           <HomeBigChart title="Market Overview" chartData={data1} />
+        </Col>
+        <Col sm={12} md={6}>
+          <Time />
         </Col>
       </Row>
     </div>

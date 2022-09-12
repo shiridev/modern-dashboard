@@ -11,11 +11,9 @@ export const themeSlice = createSlice({
 
   reducers: {
     changeTheme: (state) => {
-      if (state.defaultTheme.type === theme.light.type) {
-        state.defaultTheme = theme.dark;
-      } else {
-        state.defaultTheme = theme.light;
-      }
+      state.defaultTheme.type === theme.light.type
+        ? (state.defaultTheme = theme.dark)
+        : (state.defaultTheme = theme.light);
     },
 
     changeMainColor: (state, params) => {

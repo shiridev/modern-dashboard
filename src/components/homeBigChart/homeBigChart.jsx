@@ -4,8 +4,9 @@ import { useSelector } from "react-redux";
 import {
   Bar,
   BarChart,
-  CartesianGrid, ResponsiveContainer,
-  XAxis
+  CartesianGrid,
+  ResponsiveContainer,
+  XAxis,
 } from "recharts";
 import { CustomSelect } from "../customSelect/customSelect";
 import styles from "./homeBigChart.module.scss";
@@ -41,14 +42,18 @@ export const HomeBigChart = (props) => {
           </Col>
         </Row>
       </div>
-      <ResponsiveContainer width="100%" height={250} className="mt-3">
+      <ResponsiveContainer width="100%" height="100%" className="mt-3">
         <BarChart data={props.chartData}>
           <XAxis
             dataKey="name"
             stroke={colors.carbon}
             style={{ fontSize: "0.9em" }}
           />
-          <CartesianGrid stroke={colors.grey} vertical={false} />
+          <CartesianGrid
+            stroke={colors.lightGrey}
+            vertical={false}
+            style={{ transition: "0.3s" }}
+          />
           <Bar dataKey="pv" fill={colors.blue} />
           <Bar dataKey="uv" fill={colors.green} />
         </BarChart>

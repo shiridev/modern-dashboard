@@ -25,7 +25,7 @@ export const CustomSelect = (props) => {
           backgroundColor: colors.white,
         }}
       >
-        <span>Weekly (2022)</span>
+        <span>{props.data[0].name}</span>
         <ArrowDown2 color={colors.carbon} size="1.1em" className="ms-3" />
       </Dropdown.Toggle>
 

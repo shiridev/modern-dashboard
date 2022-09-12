@@ -8,7 +8,10 @@ export const Dashboard = () => {
   const colors = useSelector((state) => state.theme.defaultTheme);
 
   return (
-    <div className={styles.mainContainer} style={{ backgroundColor: colors.lightGrey }}>
+    <div
+      className={styles.mainContainer}
+      style={{ backgroundColor: colors.lightGrey }}
+    >
       <Sidebar />
       <Content />
     </div>

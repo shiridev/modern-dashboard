@@ -5,6 +5,7 @@ $boxShadow: 0 5px 20px 0
   );
 
 .mainContainer {
+  height: 360px;
   border-radius: 15px;
   box-shadow: $boxShadow;
   display: flex;
